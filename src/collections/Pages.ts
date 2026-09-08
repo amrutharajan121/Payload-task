@@ -1,5 +1,9 @@
 import type { CollectionConfig } from 'payload'
 
+import { Hero } from '../blocks/Hero'
+import { CTA } from '../blocks/CTA'
+import { Text } from '../blocks/Text'
+
 export const Pages: CollectionConfig = {
   slug: 'pages',
 
@@ -8,7 +12,6 @@ export const Pages: CollectionConfig = {
     group: 'Content Management',
   },
 
-  // Enable Drafts and Versioning
   versions: {
     drafts: true,
   },
@@ -25,7 +28,14 @@ export const Pages: CollectionConfig = {
       required: true,
       unique: true,
     },
-
-    // Keep your existing fields and blocks here
+    {
+      name: 'layout',
+      type: 'blocks',
+      blocks: [
+        Hero,
+        CTA,
+        Text,
+      ],
+    },
   ],
 }
