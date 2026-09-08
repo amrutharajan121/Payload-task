@@ -10,6 +10,24 @@ export const Users: CollectionConfig = {
 
   auth: true,
 
+  access: {
+    // Anyone can register
+    create: () => true,
+
+    // Only authenticated users can read users
+    read: ({ req: { user } }) => {
+      return Boolean(user)
+    },
+
+    update: ({ req: { user } }) => {
+      return Boolean(user)
+    },
+
+    delete: ({ req: { user } }) => {
+      return Boolean(user)
+    },
+  },
+
   fields: [
     {
       name: 'role',

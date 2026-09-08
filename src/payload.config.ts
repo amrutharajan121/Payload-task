@@ -22,6 +22,12 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+
+    components: {
+      afterLogin: [
+        '@/components/RegisterLink',
+      ],
+    },
   },
 
   collections: [
